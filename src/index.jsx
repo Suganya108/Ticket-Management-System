@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./Application/App";
+import App from "./Router/App";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
