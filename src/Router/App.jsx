@@ -1,39 +1,56 @@
-import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
 
-import Agent from "./Agent";
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
-function App() {
+import AddAgent from './AddAgent';
+import AddContact from './AddContact';
+import Agent from './Agent';
+import Contact from './Contact';
+import Ticket from './Ticket';
+
+function App () {
   return (
     <BrowserRouter>
       <div>
         <nav>
           <ul>
             <li>
-              <Link to="/agent">Agent</Link>
+              <Link to='/agent'>Agent</Link>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <Link to='/contact'>Contact</Link>
             </li>
             <li>
-              <Link to="/tickets">Tickets</Link>
+              <Link to='/tickets'>Tickets</Link>
+            </li>
+            <li>
+              <Link to='/addcontact'>Add Contact</Link>
+            </li>
+            <li>
+              <Link to='/addagent'>Add Agent</Link>
             </li>
           </ul>
         </nav>
 
         <Switch>
-          <Route path="/agent" component={Agent} />
+          <Route path='/agent' component={Agent} />
 
-          <Route path="/contact">
-            <h1>Contact Component</h1>
-          </Route>
-          <Route path="/tickets">
-            <h1>Tickets Component</h1>
-          </Route>
+          <Route path='/contact' component={Contact} />
+
+          <Route path='/tickets' component={Ticket} />
+
+          <Route path='/addcontact' component={AddContact} />
+
+          <Route path='/addagent' component={AddAgent} />
         </Switch>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
